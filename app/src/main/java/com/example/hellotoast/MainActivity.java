@@ -11,7 +11,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int mcount = 0;
+    private int mCount = 0;
     private TextView mShowCount;
 
     @Override
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void countUp(View view) {
-        mcount++;
+        mCount++;
+        if (mShowCount != null)
+            mShowCount.setText(Integer.toString(mCount));
     }
 }
