@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/design_default_color_primary"
         android:onClick="showtoast"
+        android:textSize="60sp"
         android:text="@string/button_label_toast"
         android:textColor="@color/white" />
 
