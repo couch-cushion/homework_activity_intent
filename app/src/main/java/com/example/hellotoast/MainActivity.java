@@ -2,6 +2,8 @@ package com.example.hellotoast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int mCount = 0;
     private TextView mShowCount;
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
         mCount++;
         if (mShowCount != null)
             mShowCount.setText(Integer.toString(mCount));
+    }
+    public void sayHello(View view) {
+        Intent intent = new Intent(MainActivity.this,secondactivity.class);
+        intent.putExtra(TAG, mShowCount.getText().toString());
+        startActivity(intent);
     }
 }
